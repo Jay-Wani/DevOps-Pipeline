@@ -27,7 +27,7 @@ pipeline {
                     input message:'Approve PRODUCTION Deployment?'
                 }
 
-                echo "Deploying to Prod....."
+                echo "Deploying to Prod......"
               }
         }
     }
