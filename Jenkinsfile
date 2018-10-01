@@ -14,11 +14,21 @@ pipeline {
         }
                
         
-        stage('Deploy'){
+        stage('Deploy to Staging'){
             steps {
-                echo "deploying the package..."
+                echo "deploying the package to staging ..."
             }
         }
 
+
+        stage('Deploy to Prod'){
+              steps{
+                timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
+
+                echo "Deploying to Prod....."
+              }
+        }
     }
 }
