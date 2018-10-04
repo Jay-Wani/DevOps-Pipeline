@@ -12,6 +12,12 @@ pipeline {
                 echo "building the package....."
             }    
         }
+
+        stage('Testing'){
+            steps {
+                echo "testing the repository ..."
+            }
+        }
                
         
         stage('Deploy to Staging'){
